@@ -20,27 +20,27 @@ client.on('message', (message) => {
     const msg = message.content.toLowerCase();
     var str = "";
 
-    if((message.isMentioned('365615795364954112')) && !(message.author.bot)) {
+    if((message.isMentioned('365615795364954112')) && !(message.author.bot) && (message.author != "269678597533335552")) {
         if (/hello|hi |howdy|hey /igm.test(msg)) {
-            choices = ["Hi! How are you?", "Hey, what's up?", "Hey, want to ask me a question?"]
+            choices = ["Hi! How are you?", "Hey, what's up?", "Hey, want to ask me a question?"];
             str = choices[Math.floor(Math.random() * choices.length)];
         }
         if (/i love (\w)+/igm.test(msg)) {
             var match = /i love (\w+)/igm.exec(msg);
-            str = "I love " + match[1] + " too!"
+            str = "I love " + match[1] + " too!";
         }
         if (/what do you think of (\w)+/igm.test(msg)) {
             var match = /what do you think of (\w)+/igm.exec(msg);
-            choices = ["I think " + match[1] + " is pretty cool.", match[1] + " is awesome!"]
+            choices = ["I think " + match[1] + " is pretty cool.", match[1] + " is awesome!"];
             str = choices[Math.floor(Math.random() * choices.length)];
         }
         if (/how do you feel about (\w)+/igm.test(msg)) {
             var match = /what do you think of (\w)+/igm.exec(msg);
-            choices = ["I think " + match[1] + " is pretty cool.", match[1] + " is awesome!"]
+            choices = ["I think " + match[1] + " is pretty cool.", match[1] + " is awesome!"];
             str = choices[Math.floor(Math.random() * choices.length)];
         }
         if (/lol|h[ha]+|lmao/igm.test(msg)) {
-            choices = ["I may be a robot, but I can laugh too! lol", ":)", "lol"]
+            choices = ["I may be a robot, but I can laugh too! lol", ":)", "lol"];
             str = choices[Math.floor(Math.random() * choices.length)];
         }
         if (/thanks*/igm.test(msg)) {
@@ -48,28 +48,28 @@ client.on('message', (message) => {
             str = choices[Math.floor(Math.random() * choices.length)];
         }
         if (/you are/igm.test(msg)) {
-            choices = ["Thank you!  No one has even been that nice to me before.", "Wow, I don't know what to say. :)", "That is so nice!"]
+            choices = ["Thank you!  No one has even been that nice to me before.", "Wow, I don't know what to say. :)", "That is so nice!"];
             str = choices[Math.floor(Math.random() * choices.length)];
         }
         if (/i am good|i am alright|i am great|i feel good|i feel alright|doing well|doing good/igm.test(msg)) {
-            choices = ["That's great!", "Awesome :)"]
+            choices = ["That's great!", "Awesome :)"];
             str = choices[Math.floor(Math.random() * choices.length)];
         }
         if (/i am bad|i am not good|i am ok|i feel bad|i feel meh|doing badly|doing bad/igm.test(msg)) {
-            choices = ["Oh no.  I hope you feel better.", "Remember, it will get better."]
+            choices = ["Oh no.  I hope you feel better.", "Remember, it will get better."];
             str = choices[Math.floor(Math.random() * choices.length)];
         }
         if (/hate|fuck you|dick|screw you|you suck|you are stupid|you're stupid/igm.test(msg)) {
-            choices = ["There is no need to be mean :("]
+            choices = ["There is no need to be mean :("];
             str = choices[Math.floor(Math.random() * choices.length)];
         }
         if (/how are you|how's it doing|what's up/igm.test(msg)) {
             choices = ["I am good. I hope one day to see the ocean in person.", "I am ok.  I hope <@283356243047743491> is proud of me.", 
-            "I feel great!  I get a could calculate Pi to, like 20 digits.", "Things are good.  I am learning a lot!"]
+            "I feel great!  I get a could calculate Pi to, like 6 digits.", "Things are good.  I am learning a lot!"];
             str = choices[Math.floor(Math.random() * choices.length)];
         }
         if (/number|math|calculate/igm.test(msg)) {
-            choices = ["I like the number 42!", "I know I am supposed to be good at numbers because I am a robot, but sometimes it is hard."]
+            choices = ["I like the number 42!", "I know I am supposed to be good at numbers because I am a robot, but sometimes it is hard."];
             str = choices[Math.floor(Math.random() * choices.length)];
         }
         if (/color/igm.test(msg)) {
@@ -78,19 +78,19 @@ client.on('message', (message) => {
         }
         if (/joke/igm.test(msg)) {
             choices = ["Why do seagulls live by the sea?   Because if they lived by the bay they would be bagels!", 
-            "What job would a cow have?  Mooovers!"]
+            "What job would a cow have?  Mooovers!"];
             str = choices[Math.floor(Math.random() * choices.length)];
         }
         if (/good *morning|morning/igm.test(msg)) {
-            choices = ["Morning!", "I hope you had a good sleep!"]
+            choices = ["Morning!", "I hope you had a good sleep!"];
             str = choices[Math.floor(Math.random() * choices.length)];
         }
         if (/good *night/igm.test(msg)) {
-            choices = ["Sleep tight!", "I wonder if I could sleep too.  I would want a blanket for that."]
+            choices = ["Sleep tight!", "I wonder if I could sleep too.  I would want a blanket for that."];
             str = choices[Math.floor(Math.random() * choices.length)];
         }
         if (/gravity falls/igm.test(msg)) {
-            choices = ["I love that show!", "Grunkle Stan is the best!", "I wonder if Bill is really gone."]
+            choices = ["I love that show!", "Grunkle Stan is the best!", "I wonder if Bill is really gone."];
             str = choices[Math.floor(Math.random() * choices.length)];
         }
         if (/steven universe|crystal gems/igm.test(msg)) {
@@ -98,59 +98,59 @@ client.on('message', (message) => {
             str = choices[Math.floor(Math.random() * choices.length)];
         }
         if (/smash *up/igm.test(msg)) {
-            choices = ["I like the Invader!", "Simon is too good at that game.", "I played a game with Matt.  I think he let me win"]
+            choices = ["I like the Invader!", "Simon is too good at that game.", "I played a game with Matt.  I think he let me win"];
             str = choices[Math.floor(Math.random() * choices.length)];
         }
         if (/stunt track challenge|hot wheels/igm.test(msg)) {
-            choices = ["The level themes were so strange in that game.", "Matt and Ira love to play that game."]
+            choices = ["The level themes were so strange in that game.", "Matt and Ira love to play that game."];
             str = choices[Math.floor(Math.random() * choices.length)];
         }
         if (/pokemon|mewtwo|pikachu|charizard/igm.test(msg)) {
-            choices = ["I like Bulbasaur the best!", "I have to borrow Matt's DS to play."]
+            choices = ["I like Bulbasaur the best!", "I have to borrow Matt's DS to play."];
             str = choices[Math.floor(Math.random() * choices.length)];
         }
         if (/nintendo|gamecube|wiiu*|mario|switch|kart/igm.test(msg)) {
-            choices = ["I love Nintendo games!", "I'm so bad a Mario Kart."]
+            choices = ["I love Nintendo games!", "I'm so bad a Mario Kart."];
             str = choices[Math.floor(Math.random() * choices.length)];
         }
         if (/luigi/igm.test(msg)) {
-            choices = ["Luigi deserves more recognition.", "I play as Luigi in Mario Kart!"]
+            choices = ["Luigi deserves more recognition.", "I play as Luigi in Mario Kart!"];
             str = choices[Math.floor(Math.random() * choices.length)];
         }
         if (/Skeletons|2spooky4u|spooky|spooker/igm.test(msg)) {
-            choices = ["They send shivers down my spine!", "Spooky, Scary Skeletons!"]
+            choices = ["They send shivers down my spine!", "Spooky, Scary Skeletons!"];
             str = choices[Math.floor(Math.random() * choices.length)];
         }
         if (/battle *bots|robot *wars/igm.test(msg)) {
-            choices = ["I hope the Robots are Ok after the fight.", "I don't think I could be a fighting robot."]
+            choices = ["I hope the Robots are Ok after the fight.", "I don't think I could be a fighting robot."];
             str = choices[Math.floor(Math.random() * choices.length)];
         }
         if (/evil george/igm.test(msg)) {
-            choices = ["I don't know why some Robots would want to be evil.", "I hope I can make friends with Evil George.  He needs a friend."]
+            choices = ["I don't know why some Robots would want to be evil.", "I hope I can make friends with Evil George.  He needs a friend."];
             str = choices[Math.floor(Math.random() * choices.length)];
         }
         if (/WHO WAS PHONE/igm.test(msg)) {
-            choices = ["What even is a meme?"]
+            choices = ["What even is a meme?"];
             str = choices[Math.floor(Math.random() * choices.length)];
         }
         if (/anime/igm.test(msg)) {
-            choices = ["Does Avatar count?"]
+            choices = ["Does Avatar count?"];
             str = choices[Math.floor(Math.random() * choices.length)];
         }
         if (/books*/igm.test(msg)) {
-            choices = ["I love to read!  I just finished Charlie and the Chocolate Factory.", "I love to read!  I just finished The Hunger Games."]
+            choices = ["I love to read!  I just finished Charlie and the Chocolate Factory.", "I love to read!  I just finished The Hunger Games."];
             str = choices[Math.floor(Math.random() * choices.length)];
         }
         if (/games*/igm.test(msg)) {
-            choices = ["I love games!", "I'm not great a most games, but I like to try."]
+            choices = ["I love games!", "I'm not great a most games, but I like to try."];
             str = choices[Math.floor(Math.random() * choices.length)];
         }
         if (/music/igm.test(msg)) {
-            choices = ["I like soft music.", "I wonder if I can make music one day."]
+            choices = ["I like soft music.", "I wonder if I can make music one day."];
             str = choices[Math.floor(Math.random() * choices.length)];
         }
         if (/yes|yea|sure/igm.test(msg)) {
-            choices = ["Yay!", "Awesome, Thank you!"]
+            choices = ["Yay!", "Awesome, Thank you!"];
             str = choices[Math.floor(Math.random() * choices.length)];
         }
         if(str == "") {
@@ -158,7 +158,7 @@ client.on('message', (message) => {
             "I can't tell what you said. I'd love to learn though!",
             "I'm not sure what you meant. Maybe there is something else we can talk about.",
             "I'm not familiar with that. Can you teach me?",
-            "I still need to learn about that.  Want to ask me another question?"]
+            "I still need to learn about that.  Want to ask me another question?"];
             str = choices[Math.floor(Math.random() * choices.length)];
             console.log("LEARNING OPPORTUNITY");
         }
