@@ -9,7 +9,7 @@ client.on('ready', () => {
     "  I am still learning and some things are hard for me, but I am trying to get better." +
     "  I might get stuck and not say much, but if you mention me like this <@365615795364954112>" +
     " and say \"Hi George\" I would love to talk to you!  If you see this message that means I just got switched on!";
-    //client.channels.get('306963050030956555').sendMessage(str);
+    //client.channels.get('306963050030956555').send(str);
     console.log(str + "\n\n");
 });
 
@@ -20,8 +20,8 @@ client.on('message', (message) => {
     const msg = message.content.toLowerCase();
     var str = "";
 
-    if((message.isMentioned('365615795364954112') && !(msg.includes('i might get stuck and not say much')))) {
-        if (/hello|hi|howdy|hey/igm.test(msg)) {
+    if((message.isMentioned('365615795364954112')) && !(message.author.bot)) {
+        if (/hello|hi |howdy|hey /igm.test(msg)) {
             choices = ["Hi! How are you?", "Hey, what's up?", "Hey, want to ask me a question?"]
             str = choices[Math.floor(Math.random() * choices.length)];
         }
@@ -48,7 +48,7 @@ client.on('message', (message) => {
             str = choices[Math.floor(Math.random() * choices.length)];
         }
         if (/you are/igm.test(msg)) {
-            choices = ["Thank you!  No one has even been that nice to me before.", "Wow, I don't know what to say.", "That is so nice!"]
+            choices = ["Thank you!  No one has even been that nice to me before.", "Wow, I don't know what to say. :)", "That is so nice!"]
             str = choices[Math.floor(Math.random() * choices.length)];
         }
         if (/i am good|i am alright|i am great|i feel good|i feel alright|doing well|doing good/igm.test(msg)) {
@@ -125,6 +125,10 @@ client.on('message', (message) => {
             choices = ["I hope the Robots are Ok after the fight.", "I don't think I could be a fighting robot."]
             str = choices[Math.floor(Math.random() * choices.length)];
         }
+        if (/evil george/igm.test(msg)) {
+            choices = ["I don't know why some Robots would want to be evil.", "I hope I can make friends with Evil George.  He needs a friend."]
+            str = choices[Math.floor(Math.random() * choices.length)];
+        }
         if (/WHO WAS PHONE/igm.test(msg)) {
             choices = ["What even is a meme?"]
             str = choices[Math.floor(Math.random() * choices.length)];
@@ -156,10 +160,10 @@ client.on('message', (message) => {
             "I'm not familiar with that. Can you teach me?",
             "I still need to learn about that.  Want to ask me another question?"]
             str = choices[Math.floor(Math.random() * choices.length)];
-            console.log("LEARnING OPPORTUNITY");
+            console.log("LEARNING OPPORTUNITY");
         }
         message.reply(str);
-        console.log("\n" + msg + "\n" + str + "\n\n");
+        console.log("\n" + msg + "\n" + str + "\n");
     }
 }); 
 
