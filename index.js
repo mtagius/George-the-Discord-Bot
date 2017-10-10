@@ -39,7 +39,7 @@ client.on('message', (message) => {
             choices = ["I think " + match[1] + " is pretty cool.", match[1] + " is awesome!"];
             str = choices[Math.floor(Math.random() * choices.length)];
         }
-        if (/lol|h[ha]+|lmao/igm.test(msg)) {
+        if (/lol|ha[ha]+|lmao/igm.test(msg)) {
             choices = ["I may be a robot, but I can laugh too! lol", ":)", "lol"];
             str = choices[Math.floor(Math.random() * choices.length)];
         }
