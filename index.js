@@ -25,17 +25,17 @@ client.on('message', (message) => {
             choices = ["Hi! How are you?", "Hey, what's up?", "Hey, want to ask me a question?"];
             str = choices[Math.floor(Math.random() * choices.length)];
         }
-        if (/i love (\w)+/igm.test(msg)) {
+        if (/i love (\w+)/igm.test(msg)) {
             var match = /i love (\w+)/igm.exec(msg);
             str = "I love " + match[1] + " too!";
         }
-        if (/what do you think of (\w)+/igm.test(msg)) {
-            var match = /what do you think of (\w)+/igm.exec(msg);
+        if (/what do you think of (\w+)/igm.test(msg)) {
+            var match = /what do you think of (\w+)/igm.exec(msg);
             choices = ["I think " + match[1] + " is pretty cool.", match[1] + " is awesome!"];
             str = choices[Math.floor(Math.random() * choices.length)];
         }
-        if (/how do you feel about (\w)+/igm.test(msg)) {
-            var match = /how do you feel about (\w)+/igm.exec(msg);
+        if (/how do you feel about (\w+)/igm.test(msg)) {
+            var match = /how do you feel about (\w+)/igm.exec(msg);
             choices = ["I think " + match[1] + " is pretty cool.", match[1] + " is awesome!"];
             str = choices[Math.floor(Math.random() * choices.length)];
         }
