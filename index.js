@@ -35,7 +35,7 @@ client.on('message', (message) => {
             str = choices[Math.floor(Math.random() * choices.length)];
         }
         if (/how do you feel about (\w)+/igm.test(msg)) {
-            var match = /what do you think of (\w)+/igm.exec(msg);
+            var match = /how do you feel about (\w)+/igm.exec(msg);
             choices = ["I think " + match[1] + " is pretty cool.", match[1] + " is awesome!"];
             str = choices[Math.floor(Math.random() * choices.length)];
         }
