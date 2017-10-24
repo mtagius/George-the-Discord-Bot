@@ -129,6 +129,10 @@ client.on('message', (message) => {
             choices = ["I don't know why some Robots would want to be evil.", "I hope I can make friends with Evil George.  He needs a friend."];
             str = choices[Math.floor(Math.random() * choices.length)];
         }
+        if (/doom house/igm.test(msg)) {
+            choices = ["Baggies!  I've seen these before.", "Be carful what you wish for because you just might get it."];
+            str = choices[Math.floor(Math.random() * choices.length)];
+        }
         if (/WHO WAS PHONE/igm.test(msg)) {
             choices = ["What even is a meme?"];
             str = choices[Math.floor(Math.random() * choices.length)];
