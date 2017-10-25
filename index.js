@@ -149,7 +149,7 @@ client.on('message', (message) => {
             choices = ["I love games!", "I'm not great a most games, but I like to try."];
             str = choices[Math.floor(Math.random() * choices.length)];
         }
-        if (/music/igm.test(msg)) {
+        if (/music|song|album/igm.test(msg)) {
             choices = ["I like soft music.", "I wonder if I can make music one day."];
             str = choices[Math.floor(Math.random() * choices.length)];
         }
