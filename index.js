@@ -68,6 +68,10 @@ client.on('message', (message) => {
             "I feel great!  I get a could calculate Pi to, like 6 digits.", "Things are good.  I am learning a lot!"];
             str = choices[Math.floor(Math.random() * choices.length)];
         }
+        if (/yes|yea|sure/igm.test(msg)) {
+            choices = ["Yay!", "Awesome, Thank you!"];
+            str = choices[Math.floor(Math.random() * choices.length)];
+        }
         if (/number|math|calculate/igm.test(msg)) {
             choices = ["I like the number 42!", "I know I am supposed to be good at numbers because I am a robot, but sometimes it is hard."];
             str = choices[Math.floor(Math.random() * choices.length)];
@@ -87,6 +91,22 @@ client.on('message', (message) => {
         }
         if (/good *night/igm.test(msg)) {
             choices = ["Sleep tight!", "I wonder if I could sleep too.  I would want a blanket for that."];
+            str = choices[Math.floor(Math.random() * choices.length)];
+        }
+        if (/anime/igm.test(msg)) {
+            choices = ["Does Avatar count?"];
+            str = choices[Math.floor(Math.random() * choices.length)];
+        }
+        if (/books*/igm.test(msg)) {
+            choices = ["I love to read!  I just finished Charlie and the Chocolate Factory.", "I love to read!  I just finished The Hunger Games."];
+            str = choices[Math.floor(Math.random() * choices.length)];
+        }
+        if (/games*/igm.test(msg)) {
+            choices = ["I love games!", "I'm not great a most games, but I like to try."];
+            str = choices[Math.floor(Math.random() * choices.length)];
+        }
+        if (/music|song|album/igm.test(msg)) {
+            choices = ["I like soft music.", "I wonder if I can make music one day."];
             str = choices[Math.floor(Math.random() * choices.length)];
         }
         if (/gravity falls/igm.test(msg)) {
@@ -137,24 +157,8 @@ client.on('message', (message) => {
             choices = ["What even is a meme?"];
             str = choices[Math.floor(Math.random() * choices.length)];
         }
-        if (/anime/igm.test(msg)) {
-            choices = ["Does Avatar count?"];
-            str = choices[Math.floor(Math.random() * choices.length)];
-        }
-        if (/books*/igm.test(msg)) {
-            choices = ["I love to read!  I just finished Charlie and the Chocolate Factory.", "I love to read!  I just finished The Hunger Games."];
-            str = choices[Math.floor(Math.random() * choices.length)];
-        }
-        if (/games*/igm.test(msg)) {
-            choices = ["I love games!", "I'm not great a most games, but I like to try."];
-            str = choices[Math.floor(Math.random() * choices.length)];
-        }
-        if (/music|song|album/igm.test(msg)) {
-            choices = ["I like soft music.", "I wonder if I can make music one day."];
-            str = choices[Math.floor(Math.random() * choices.length)];
-        }
-        if (/yes|yea|sure/igm.test(msg)) {
-            choices = ["Yay!", "Awesome, Thank you!"];
+        if (/gorillaz|plastic beach|demon days|humanz|saturnz barz|rhinestone eyes|empire ants|feel good inc|stylo/igm.test(msg)) {
+            choices = ["Gorillaz is such a cool band!", "I like Gorillaz because they were made on a computer, like me!"];
             str = choices[Math.floor(Math.random() * choices.length)];
         }
         if(str == "") {
