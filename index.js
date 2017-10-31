@@ -109,6 +109,10 @@ client.on('message', (message) => {
             choices = ["I like soft music.", "I wonder if I can make music one day."];
             str = choices[Math.floor(Math.random() * choices.length)];
         }
+        if (/halloween/igm.test(msg)) {
+            choices = ["It's the best day of the year!", "I want to go Trick or Treating!"];
+            str = choices[Math.floor(Math.random() * choices.length)];
+        }
         if (/gravity falls/igm.test(msg)) {
             choices = ["I love that show!", "Grunkle Stan is the best!", "I wonder if Bill is really gone."];
             str = choices[Math.floor(Math.random() * choices.length)];
