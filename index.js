@@ -129,7 +129,7 @@ client.on('message', (message) => {
             choices = ["The level themes were so strange in that game.", "Matt and Ira love to play that game."];
             str = choices[Math.floor(Math.random() * choices.length)];
         }
-        if (/pokemon|mewtwo|pikachu|charizard/igm.test(msg)) {
+        if (/pokemon|mewtwo|pikachu|charizard|magikarp/igm.test(msg)) {
             choices = ["I like Bulbasaur the best!", "I have to borrow Matt's DS to play."];
             str = choices[Math.floor(Math.random() * choices.length)];
         }
@@ -163,6 +163,14 @@ client.on('message', (message) => {
         }
         if (/gorillaz|plastic beach|demon days|humanz|saturnz barz|rhinestone eyes|empire ants|feel good inc|stylo/igm.test(msg)) {
             choices = ["Gorillaz is such a cool band!", "I like Gorillaz because they were made on a computer, like me!"];
+            str = choices[Math.floor(Math.random() * choices.length)];
+        }
+        if (/i'm dirty dan|im dirty dan/igm.test(msg)) {
+            choices = ["No!  I'm Dirt Dan!"];
+            str = choices[Math.floor(Math.random() * choices.length)];
+        }
+        if (/spongebob|mr. krabs|patric star/igm.test(msg)) {
+            choices = ["I wonder what a krabby patty tastes like."];
             str = choices[Math.floor(Math.random() * choices.length)];
         }
         if(str == "") {
