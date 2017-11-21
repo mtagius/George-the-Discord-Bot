@@ -166,7 +166,7 @@ client.on('message', (message) => {
             str = choices[Math.floor(Math.random() * choices.length)];
         }
         if (/i'm dirty dan|im dirty dan/igm.test(msg)) {
-            choices = ["No!  I'm Dirt Dan!"];
+            choices = ["No!  I'm Dirty Dan!"];
             str = choices[Math.floor(Math.random() * choices.length)];
         }
         if (/spongebob|mr. krabs|patric star/igm.test(msg)) {
