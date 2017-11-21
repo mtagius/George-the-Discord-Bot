@@ -173,6 +173,10 @@ client.on('message', (message) => {
             choices = ["I wonder what a krabby patty tastes like."];
             str = choices[Math.floor(Math.random() * choices.length)];
         }
+        if (/harry potter|hogwarts|hermione|voldemort|wizard/igm.test(msg)) {
+            choices = ["HARRY, DID YOU PUT YOUR NAME IN THE GOBLET OF FIRE?!?", "I wish I could go to Hogwarts!"];
+            str = choices[Math.floor(Math.random() * choices.length)];
+        }
         if(str == "") {
             choices = ["<@283356243047743491> never taught me about that, but maybe he will teach me now.",
             "I can't tell what you said. I'd love to learn though!",
