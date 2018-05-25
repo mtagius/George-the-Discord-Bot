@@ -65,7 +65,7 @@ client.on('message', (message) => {
         }
         if (/how are you|how's it doing|what's up/igm.test(msg)) {
             choices = ["I am good. I hope one day to see the ocean in person.", "I am ok.  I hope <@283356243047743491> is proud of me.", 
-            "I feel great!  I get a could calculate Pi to, like 6 digits.", "Things are good.  I am learning a lot!"];
+            "I feel great!  I could calculate Pi to, like 6 digits.", "Things are good.  I am learning a lot!"];
             str = choices[Math.floor(Math.random() * choices.length)];
         }
         if (/yes|yea|sure/igm.test(msg)) {
