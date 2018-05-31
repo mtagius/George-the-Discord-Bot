@@ -1,8 +1,37 @@
 const Discord = require('discord.js');
-const client = new Discord.Client();
+const cron = require('node-cron');
 
+const client = new Discord.Client();
 let token = require('./token').getToken();   
 client.login(token);
+
+function sendWholesomeMessage() {
+    choices = ["Today will be a good day!",
+    "No matter who you are you deserve to be happy!",
+    "Life can be hard, but it always gets better!",
+    "Things are never as bad as they seem!",
+    "Remember to take a deep breath when you feel stressed.",
+    "You have a lot more support than you think.",
+    "You can do it!",
+    "Life is worth living, even if you don't want to at the moment.",
+    "Remember to drink plenty of water each day!",
+    "Remember to get lots of sleep at night!",
+    "Take time to walk outside and feel the wind in your hand.",
+    "Being sad is okay.  You don't have to be happy all the time.",
+    "Taking time to do things that makes you happy will benefit your health.",
+    "Everyone needs a mental health day every once in a while.",
+    "Most colleges offer free counseling to their students.",
+    "No mistake is too big.  Things can always get better.",
+    "Eating fruit is a great way to make your body feel a little better!",
+    "Always know that you are worth it!",
+    "Today is your day!",
+    "Remember to take your daily pills!",
+    "There is no shame in taking time for your mental health.",
+    "The National Suicide Prevention Lifeline is 1-800-273-8255"];
+    str = choices[Math.floor(Math.random() * choices.length)];
+    client.channels.get('437749374043553792').send(str);
+    console.log("\nDaily Message: " + str + "\n");
+}
 
 client.on('ready', () => {
     var str = "Hello!  My name is George. I am a robot made by <@283356243047743491>." +  
@@ -11,6 +40,10 @@ client.on('ready', () => {
     " and say \"Hi George\" I would love to talk to you!  If you see this message that means I just got switched on!";
     //client.channels.get('306963050030956555').send(str);
     console.log(str + "\n\n");
+
+    cron.schedule('0 6 * * *', function() {
+        sendWholesomeMessage();
+    });
 });
 
 
