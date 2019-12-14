@@ -39,6 +39,7 @@ client.on('ready', () => {
     "  I might get stuck and not say much, but if you mention me like this <@365615795364954112>" +
     " and say \"Hi George\" I would love to talk to you!  If you see this message that means I just got switched on!";
     //client.channels.get('306963050030956555').send(str);
+    client.channels.get('437749374043553792').send('\:grinning:');
     console.log(str + "\n\n");
 
     cron.schedule('0 6 * * *', function() {
