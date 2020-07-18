@@ -2,47 +2,47 @@ const Discord = require('discord.js');
 const cron = require('node-cron');
 
 const client = new Discord.Client();
-let token = require('./token').getToken();   
+let token = require('./token').getToken();
 client.login(token);
 
 function sendWholesomeMessage() {
     choices = ["Today will be a good day! \:rainbow:",
-    "No matter who you are you deserve to be happy! \:grinning:",
-    "Life can be hard, but it always gets better! \:grinning:",
-    "Things are never as bad as they seem! \:white_sun_rain_cloud:",
-    "Remember to take a deep breath when you feel stressed. \:triumph:",
-    "You have a lot more support than you think. \:stuck_out_tongue_closed_eyes: \:smiling_face_with_3_hearts: \:relieved: ",
-    "You can do it! \:grinning:",
-    "Life is worth living, even if you don't want to at the moment. \:saxophone:",
-    "Remember to drink plenty of water each day! \:droplet:",
-    "Remember to get lots of sleep at night! \:sleeping:",
-    "Take time to walk outside and feel the wind in your hand. \:wind_blowing_face: \:cowboy:",
-    "Being sad is okay.  You don't have to be happy all the time. \:disappointed:",
-    "Taking time to do things that makes you happy will benefit your health. \:person_in_lotus_position:",
-    "Everyone needs a mental health day every once in a while. \:coffee:",
-    "Most colleges offer free counseling to their students. \:person_raising_hand:",
-    "No mistake is too big.  Things can always get better. \:grinning:",
-    "Eating fruit is a great way to make your body feel a little better! \:strawberry:",
-    "Always know that you are worth it! \:grinning:",
-    "Today is your day! \:blush:",
-    "Remember to take your daily pills! \:pill:",
-    "There is no shame in taking time for your mental health. \:brain:",
-    "The National Suicide Prevention Lifeline is 1-800-273-8255"];
+        "No matter who you are you deserve to be happy! \:grinning:",
+        "Life can be hard, but it always gets better! \:grinning:",
+        "Things are never as bad as they seem! \:white_sun_rain_cloud:",
+        "Remember to take a deep breath when you feel stressed. \:triumph:",
+        "You have a lot more support than you think. \:stuck_out_tongue_closed_eyes: \:smiling_face_with_3_hearts: \:relieved: ",
+        "You can do it! \:grinning:",
+        "Life is worth living, even if you don't want to at the moment. \:saxophone:",
+        "Remember to drink plenty of water each day! \:droplet:",
+        "Remember to get lots of sleep at night! \:sleeping:",
+        "Take time to walk outside and feel the wind in your hand. \:wind_blowing_face: \:cowboy:",
+        "Being sad is okay.  You don't have to be happy all the time. \:disappointed:",
+        "Taking time to do things that makes you happy will benefit your health. \:person_in_lotus_position:",
+        "Everyone needs a mental health day every once in a while. \:coffee:",
+        "Most colleges offer free counseling to their students. \:person_raising_hand:",
+        "No mistake is too big.  Things can always get better. \:grinning:",
+        "Eating fruit is a great way to make your body feel a little better! \:strawberry:",
+        "Always know that you are worth it! \:grinning:",
+        "Today is your day! \:blush:",
+        "Remember to take your daily pills! \:pill:",
+        "There is no shame in taking time for your mental health. \:brain:",
+        "The National Suicide Prevention Lifeline is 1-800-273-8255"];
     str = choices[Math.floor(Math.random() * choices.length)];
-    client.channels.get('437749374043553792').send(str);
+    client.channels.cache.get('437749374043553792').send(str);
     console.log("\nDaily Message: " + str + "\n");
 }
 
 client.on('ready', () => {
-    var str = "Hello!  My name is George. I am a robot made by <@283356243047743491>." +  
-    "  I am still learning and some things are hard for me, but I am trying to get better." +
-    "  I might get stuck and not say much, but if you mention me like this <@365615795364954112>" +
-    " and say \"Hi George\" I would love to talk to you!  If you see this message that means I just got switched on!";
-    //client.channels.get('306963050030956555').send(str);
+    var str = "Hello!  My name is George. I am a robot made by <@283356243047743491>." +
+        "  I am still learning and some things are hard for me, but I am trying to get better." +
+        "  I might get stuck and not say much, but if you mention me like this <@365615795364954112>" +
+        " and say \"Hi George\" I would love to talk to you!  If you see this message that means I just got switched on!";
+    //client.channels.cache.get('306963050030956555').send(str);
     sendWholesomeMessage();
     console.log(str + "\n\n");
 
-    cron.schedule('0 6 * * *', function() {
+    cron.schedule('0 6 * * *', function () {
         sendWholesomeMessage();
     });
 });
@@ -54,7 +54,7 @@ client.on('message', (message) => {
     const msg = message.content.toLowerCase();
     var str = "";
 
-    if((message.isMentioned('365615795364954112')) && !(message.author.bot) && (message.author != "269678597533335552")) {
+    if ((message.isMentioned('365615795364954112')) && !(message.author.bot) && (message.author != "269678597533335552")) {
         if (/hello|hi |howdy|hey /igm.test(msg)) {
             choices = ["Hi! How are you?", "Hey, what's up?", "Hey, want to ask me a question?"];
             str = choices[Math.floor(Math.random() * choices.length)];
@@ -98,8 +98,8 @@ client.on('message', (message) => {
             str = choices[Math.floor(Math.random() * choices.length)];
         }
         if (/how are you|how's it doing|what's up/igm.test(msg)) {
-            choices = ["I am good. I hope one day to see the ocean in person.", "I am ok.  I hope <@283356243047743491> is proud of me.", 
-            "I feel great!  I could calculate Pi to, like 6 digits.", "Things are good.  I am learning a lot!"];
+            choices = ["I am good. I hope one day to see the ocean in person.", "I am ok.  I hope <@283356243047743491> is proud of me.",
+                "I feel great!  I could calculate Pi to, like 6 digits.", "Things are good.  I am learning a lot!"];
             str = choices[Math.floor(Math.random() * choices.length)];
         }
         if (/yes|yea|sure/igm.test(msg)) {
@@ -115,8 +115,8 @@ client.on('message', (message) => {
             str = choices[Math.floor(Math.random() * choices.length)];
         }
         if (/joke/igm.test(msg)) {
-            choices = ["Why do seagulls live by the sea?   Because if they lived by the bay they would be bagels!", 
-            "What job would a cow have?  Mooovers!"];
+            choices = ["Why do seagulls live by the sea?   Because if they lived by the bay they would be bagels!",
+                "What job would a cow have?  Mooovers!"];
             str = choices[Math.floor(Math.random() * choices.length)];
         }
         if (/good *morning|morning/igm.test(msg)) {
@@ -211,17 +211,17 @@ client.on('message', (message) => {
             choices = ["HARRY, DID YOU PUT YOUR NAME IN THE GOBLET OF FIRE?!?", "I wish I could go to Hogwarts!"];
             str = choices[Math.floor(Math.random() * choices.length)];
         }
-        if(str == "") {
+        if (str == "") {
             choices = ["<@283356243047743491> never taught me about that, but maybe he will teach me now.",
-            "I can't tell what you said. I'd love to learn though!",
-            "I'm not sure what you meant. Maybe there is something else we can talk about.",
-            "I'm not familiar with that. Can you teach me?",
-            "I still need to learn about that.  Want to ask me another question?"];
+                "I can't tell what you said. I'd love to learn though!",
+                "I'm not sure what you meant. Maybe there is something else we can talk about.",
+                "I'm not familiar with that. Can you teach me?",
+                "I still need to learn about that.  Want to ask me another question?"];
             str = choices[Math.floor(Math.random() * choices.length)];
             console.log("LEARNING OPPORTUNITY");
         }
         message.reply(str);
         console.log("\n" + msg + "\n" + str + "\n");
     }
-}); 
+});
 
