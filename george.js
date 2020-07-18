@@ -54,7 +54,7 @@ client.on('message', (message) => {
     const msg = message.content.toLowerCase();
     var str = "";
 
-    if ((message.isMentioned('365615795364954112')) && !(message.author.bot) && (message.author != "269678597533335552")) {
+    if ((message.mentions.has('365615795364954112')) && !(message.author.bot) && (message.author != "269678597533335552")) {
         if (/hello|hi |howdy|hey /igm.test(msg)) {
             choices = ["Hi! How are you?", "Hey, what's up?", "Hey, want to ask me a question?"];
             str = choices[Math.floor(Math.random() * choices.length)];
